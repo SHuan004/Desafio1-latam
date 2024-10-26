@@ -78,9 +78,11 @@ function conversionDias(): void {
 
   // Verifica que los días sean un número válido y no negativo
   if (dias !== null && dias >= 0) {
-    const años: number = Math.floor(dias / 365); // Calcula los años
-    const semanas: number = Math.floor((dias % 365) / 7); // Calcula las semanas restantes
-    const diasRestantes: number = dias % 7; // Calcula los días restantes
+
+    const años: number = Math.floor(dias / 365);
+    const diasRestantesParaSemanas: number = dias % 365;
+    const semanas: number = Math.floor(diasRestantesParaSemanas / 7);
+    const diasRestantes: number = diasRestantesParaSemanas % 7;
     alert(`Equivalencia:
     ${años} años, ${semanas} semanas, y ${diasRestantes} días`);
   } else {
